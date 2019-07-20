@@ -3,9 +3,9 @@
         <form @submit.prevent="onSubmit">
             <div class="form-group">
                 <div class="input-group mb-3">
-                    <input class="form-control border-primary" v-model="keyword" type="text" placeholder="Find new restaurants" aria-label="Search" />
+                    <input class="form-control" v-model="keyword" type="text" placeholder="Find new restaurants" aria-label="Search" />
                     <div class="input-group-append">
-                        <button class="btn btn-outline-primary" type="submit">
+                        <button class="btn btn-primary" type="submit">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>

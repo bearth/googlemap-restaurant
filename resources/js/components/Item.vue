@@ -1,5 +1,5 @@
 <template>
-    <div class="card mb-3 border-primary">
+    <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">{{ item.name }}</h5>
             <p class="card-text">{{ item.formatted_address }}</p>
