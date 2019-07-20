@@ -35,10 +35,10 @@ class RestaurantApiController extends Controller
         $minutes = 15;
         // define cache key
         $key = 'restaurant-' . $query;
-        /* 
-        retrieve cached data from key if there are any,
-        otherwise make new request and store data in cache with key
-        */
+        /**
+         * retrieve cached data from key if there are any,
+         * otherwise make new request and store data in cache with key
+         */ 
         return Cache::remember($key, $minutes, function () use ($query) {
             return $this->requestGoogleMapApi($query);
         });
@@ -48,7 +48,7 @@ class RestaurantApiController extends Controller
     {
         // wrap api request in try catch in case there are any errors
         try {
-            // make api request
+            // make api request with guzzle
             $response = $this->client->get('textsearch/json', [
                 'query' => [
                     'key' => config('googlemap.api_key'),

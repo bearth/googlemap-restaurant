@@ -10,14 +10,16 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8600351695.js"></script>
 </head>
 <body>
     <div id="app" class="container">
-        <h1 class="text-center">Google Map Restaurant</h1>
-        <example-component></example-component>
+        <restaurant></restaurant>
     </div>
     
-    <!-- App.js -->
+    <!-- app.js -->
     <script src="{{ mix('js/app.js')}}"></script>
 </body>
 </html>
