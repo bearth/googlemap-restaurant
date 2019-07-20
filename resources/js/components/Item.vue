@@ -17,6 +17,7 @@
 
 <script>
     export default {
+        // define props
         props: ['item']
     }
 </script>

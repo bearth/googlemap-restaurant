@@ -18,16 +18,19 @@
 <script>
     export default {
         data() {
+            // define default keyword
             return {
                 keyword: 'Bangsue'
             }
         },
 
         created() {
+            // emit fetch-restaurants event with default keyword "Bangsue" when component get created
             this.$emit('fetch-restaurants', this.keyword);
         },
 
         methods: {
+            // emit fetch-restaurants event with input keyword when submit form
             onSubmit() {
                 this.$emit('fetch-restaurants', this.keyword);
             }

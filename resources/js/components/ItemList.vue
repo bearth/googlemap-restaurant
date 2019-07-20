@@ -16,8 +16,10 @@
     import Item from './Item';
 
     export default {
+        // define props
         props: ['items', 'loading'],
 
+        // register local components
         components: {
             Item
         }

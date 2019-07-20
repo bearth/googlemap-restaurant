@@ -12,22 +12,29 @@
 
     export default {
         data() {
+            // define default items and loading
             return {
                 items: [],
                 loading: true
             }
         },
 
+        // register local components
         components: {
             SearchBox,
             ItemList
         },
 
         methods: {
+            // define fetchRestaurants method
             async fetchRestaurants(value) {
+                // set loading to true when begin fetching data
                 this.loading = true;
+                // make api request to retrieve data according to keyword
                 let res = await axios.get('api/restaurants', { params: { query: value } });
+                // set items value to api response
                 this.items = res.data.data
+                // set loading back to false
                 this.loading = false;
             }
         }
