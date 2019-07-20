@@ -1890,6 +1890,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // define props
   props: ['item']
 });
 
@@ -1921,7 +1922,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // define props
   props: ['items', 'loading'],
+  // register local components
   components: {
     Item: _Item__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -1960,16 +1963,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
+    // define default items and loading
     return {
       items: [],
       loading: true
     };
   },
+  // register local components
   components: {
     SearchBox: _SearchBox__WEBPACK_IMPORTED_MODULE_1__["default"],
     ItemList: _ItemList__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   methods: {
+    // define fetchRestaurants method
     fetchRestaurants: function () {
       var _fetchRestaurants = _asyncToGenerator(
       /*#__PURE__*/
@@ -1979,7 +1985,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                this.loading = true;
+                // set loading to true when begin fetching data
+                this.loading = true; // make api request to retrieve data according to keyword
+
                 _context.next = 3;
                 return axios.get('api/restaurants', {
                   params: {
@@ -1989,7 +1997,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 res = _context.sent;
-                this.items = res.data.data;
+                // set items value to api response
+                this.items = res.data.data; // set loading back to false
+
                 this.loading = false;
 
               case 6:
@@ -2039,14 +2049,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
+    // define default keyword
     return {
       keyword: 'Bangsue'
     };
   },
   created: function created() {
+    // emit fetch-restaurants event with default keyword "Bangsue" when component get created
     this.$emit('fetch-restaurants', this.keyword);
   },
   methods: {
+    // emit fetch-restaurants event with input keyword when submit form
     onSubmit: function onSubmit() {
       this.$emit('fetch-restaurants', this.keyword);
     }
@@ -38863,7 +38876,7 @@ var render = function() {
                   expression: "keyword"
                 }
               ],
-              staticClass: "form-control",
+              staticClass: "form-control border-primary",
               attrs: {
                 type: "text",
                 placeholder: "Find new restaurants",
@@ -51067,6 +51080,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+// register restaurant component globally
 
 Vue.component('restaurant', __webpack_require__(/*! ./components/Restaurant.vue */ "./resources/js/components/Restaurant.vue")["default"]);
 /**
