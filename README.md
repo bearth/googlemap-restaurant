@@ -1,6 +1,7 @@
 # googlemap-restaurant
 A simple restaurant web application powered by Laravel, Vue and Google Map API
-# Installation steps
+
+# Installation
 1. ```composer install```
 2. ```yarn```
 3. ```yarn dev```
