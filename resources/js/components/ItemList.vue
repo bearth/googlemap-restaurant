@@ -6,8 +6,8 @@
         <div v-else-if="!loading && items.length == 0">
             <h4>Sorry! no result you are looking for. Please try again.</h4>
         </div>
-        <div v-else v-for="item in items" v-bind:key="item.id">
-            <item v-bind:item="item"></item>
+        <div v-else v-for="item in items" :key="item.id">
+            <item :item="item"></item>
         </div>
     </div>
 </template>
