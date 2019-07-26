@@ -51,9 +51,7 @@ class RestaurantApiController extends Controller
             // make api request with guzzle
             $response = $this->client->get('textsearch/json', [
                 'query' => [
-                    // hardcode key for the sake of simplicity, if in real app would use config
-                    'key' => 'AIzaSyDRJ62kBvVvdax9mhAkmJAqHDMKqVXYGnY',
-                    //'key' => config('googlemap.api_key'),
+                    'key' => config('googlemap.api_key'),
                     'type' => 'restaurant',
                     'query' => $query
                 ]
